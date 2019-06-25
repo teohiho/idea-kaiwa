@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kaiwa Good</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+
+    img {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width: 200px;
+      height: 300px;
+    }
+
+
+
+    
+    table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    th,
+    td {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>こんにちは</h1>
+    <div id="iframeAudio"></div>
+    <!--<iframe src="" allow="autoplay" style="display:none" id="iframeAudio"></iframe> 
+					 http://webcoban.vn/file/bell.mp3 
+					 https://freesound.org/data/previews/271/271632_5158160-lq.mp3  -->
+    <table>
+      <tr>
+        <th>
+          <img id="myImage" src="https://www.w3schools.com/js/pic_bulboff.gif"></img>
+          <iframe src="https://freesound.org/data/previews/271/271632_5158160-lq.mp3" allow="autoplay" style="display:none" id="iframeAudio1"></iframe>
+          <p id="count"></p>
+        </th>
+        <th>
+          <img id="myImage1" src="https://www.w3schools.com/js/pic_bulboff.gif" 　/>
+          <p id="count1"></p>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <h2>もう一度、お願いします。</h2>
+        </td>
+        <td>
+          <h2>ベトナム語で説明してみたいです。</h2>
+        </td>
+      </tr>
+    </table>
+    <script language="javascript">
+      var count = 0
+      var count1 = 0
+      $(function() {
+        $('*').keyup(function(e) {
+          if (e.keyCode == '65') { //a
+            document.getElementById('myImage').src = 'https://www.w3schools.com/js/pic_bulbon.gif'
+            document.getElementById('iframeAudio1').src = 'https://freesound.org/data/previews/271/271632_5158160-lq.mp3'
+            <!-- count-->	
+            count = count + 1 / 2
+            document.getElementById("count").innerHTML = "Count: " + count
+            var do_alert = function() {
+              document.getElementById('myImage').src = 'https://www.w3schools.com/js/pic_bulboff.gif'
+            };
+            setTimeout(do_alert, 2000);
+          } else if (e.keyCode == '68') {
+            document.getElementById('myImage1').src = 'https://www.w3schools.com/js/pic_bulbon.gif'
+            document.getElementById('iframeAudio1').src = 'https://freesound.org/data/previews/271/271632_5158160-lq.mp3'
+            <!-- count-->	
+            count1 = count1 + 1 / 2
+            document.getElementById("count1").innerHTML = "Count: " + count1
+            var do_alert = function() {
+              document.getElementById('myImage1').src = 'https://www.w3schools.com/js/pic_bulboff.gif'
+            };
+            setTimeout(do_alert, 2000);
+          }
+        })
+      })
+    </script>
+  </div>
+</body>
+
+</html>
